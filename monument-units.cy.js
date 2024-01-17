@@ -37,6 +37,6 @@ describe('template spec', () => {
     cy.get('tbody tr').each( tableRows => {
       cy.wrap(tableRows).find('td').eq(3).should('contain', 'Austin Facility 1')
     })
-    //api test & iframe
+    //api test
   })
 })
