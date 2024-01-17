@@ -34,20 +34,9 @@ describe('template spec', () => {
     cy.get('form div button p').contains('Apply').click()
     cy.wait(1000)
 
-    //cy.get('iframe').its('O.contentDocument.body').should('be.visible')
-      //.get('#data-table-container-units tbody tr')
-      //.each(cy.wrap(tableRow).find('td').eq(3).should('contain', 'Austin Facility 1'))
-    cy.get('body #main-pane') 
-    /*   .its('0.contentDocument.body').should('be.visible')
-      .then(cy.wrap)
-      .find('#data-table-container-units')
-      .find('tbody') 
-      .find('tr').each($row => {
-        const cellText = $row.find('td').eq(3).text().trim();
-    
-        // Check that the cell text is 'Austin Facility 1'
-        expect(cellText).to.equal('Austin Facility 1');
-      });
-     */
+    cy.get('tbody tr').each( tableRows => {
+      cy.wrap(tableRows).find('td').eq(3).should('contain', 'Austin Facility 1')
+    })
+    //api test & iframe
   })
 })
