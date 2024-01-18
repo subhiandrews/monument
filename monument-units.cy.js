@@ -39,4 +39,8 @@ describe('template spec', () => {
     })
     //api test
   })
+
+  it('alternative Navigation to Units', () => {
+    cy.navigateToUnits();
+  })
 })
